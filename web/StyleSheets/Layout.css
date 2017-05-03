@@ -1,0 +1,44 @@
+body{
+    background-image: url(Images/Rosetti.jpg);
+    background-size: 100% 100%;
+}
+.photo{
+    display: block;
+    background-image: url("Images/pizza_trad_pepperoni.png");
+    background-size: 50% 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+.header{
+    display: block;
+}
+.content{
+    position: relative;
+    left: 10%;
+    display: block;
+    background-color: azure;
+    width: 80%;
+}
+.footer{
+    display: block;
+    background-color: bisque;
+    position: relative;
+    left: 10%;
+    width: 80%;
+ }
+.menu{
+    position: relative;
+    left: 10%;
+    background-color: white;
+    width: 80%;
+}
+.menu div{
+    display: inline-block;
+    margin: 10px;
+    padding-left:10px;
+    padding-right:10px;
+}
+.menu div:hover{
+    text-decoration:underline;
+}
