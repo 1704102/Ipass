@@ -1,0 +1,24 @@
+.form{
+    margin: auto;
+    width: 420px;
+}
+.form div label{
+    width: 200px;
+    display: block;
+    height: 30px;
+}
+.form div input{
+    width: 200px;
+    display: block;
+    height: 30px;
+}
+.form div textarea{
+    width: 200px;
+    display: block;
+    height: 30px;
+}
+.form div select{
+    width: 200px;
+    display: block;
+    height: 30px;
+}
