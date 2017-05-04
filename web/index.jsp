@@ -21,6 +21,6 @@
 </div>
 <div class="content"> this is the content</div>
 <div class="footer"> end</div>
-<%--<h3 class="red"><%=Main.hello()%></h3>.--%>
+<h3 class="red"><%=Main.hello()%></h3>.
 </body>
 </html>
