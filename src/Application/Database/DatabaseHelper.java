@@ -16,12 +16,8 @@ public class DatabaseHelper {
     Connection connection;
     public void connect() {
         try {
-            // This will load the MySQL driver, each DB has its own driver
             Class.forName("com.mysql.jdbc.Driver");;
-            // Setup the connection with the DB
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ipass","root","klbxjmpv526f");
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
