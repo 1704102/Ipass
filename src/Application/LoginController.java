@@ -5,6 +5,7 @@ package Application;
  */
 
 
+import Application.Database.LoginDatabase;
 import Application.Database.ReserveringDatabase;
 
 import javax.servlet.ServletException;
@@ -21,6 +22,8 @@ import java.io.PrintWriter;
 @WebServlet("/loginC.jsp")
 public class LoginController extends HttpServlet {
 
+    LoginDatabase database = new LoginDatabase();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("start");
@@ -28,10 +31,9 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        System.out.println(username);
-        System.out.println(password);
+        database.checkLogin(username, password);
 
-        request.getRequestDispatcher("/Reserveren.jsp").include(request, response);
+        request.getRequestDispatcher("/login.jsp").include(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
