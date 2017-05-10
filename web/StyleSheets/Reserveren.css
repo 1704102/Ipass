@@ -1,6 +1,11 @@
+body{
+    background-color: grey;
+}
 .form{
     margin: auto;
     width: 420px;
+    display: block;
+    border: 1px solid black;
 }
 .form div label{
     width: 200px;

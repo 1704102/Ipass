@@ -2,6 +2,14 @@ body{
     background-image: url(Images/Rosetti.jpg);
     background-size: 100% 100%;
 }
+object{
+    position: relative;
+    left: 10%;
+    display: block;
+    background-color: azure;
+    width: 80%;
+    height: 300px;
+}
 .photo{
     display: block;
     background-image: url("Images/pizza_trad_pepperoni.png");
@@ -12,13 +20,6 @@ body{
 }
 .header{
     display: block;
-}
-.content{
-    position: relative;
-    left: 10%;
-    display: block;
-    background-color: azure;
-    width: 80%;
 }
 .footer{
     display: block;

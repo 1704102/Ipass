@@ -1,17 +1,25 @@
 <html>
 <head>
-  <title>website</title>
-  <link rel="stylesheet" href="StyleSheets/Layout.css" type="text/css" >
+    <title>website</title>
+    <link rel="stylesheet" href="StyleSheets/Layout.css" type="text/css">
 </head>
 <body>
 <div class="header">hello</div>
 <div class="photo"></div>
 <div class="menu">
-  <a href="index.html"> <div>Home</div></a>
-  <a href="Reserveren.jsp"> <div>Reserveren</div></a>
-  <div>Info</div>
+    <input id="reserveren" type="button" value="reserveren" onclick="changePage('Reserveren.jsp')"/>
+    <input id="login" type="button" value="login" onclick="changePage('login.jsp')"/>
 </div>
-<div class="content"> this is the content</div>
+<object type="text/html" id="htmlFrame" style="border: none;" data="Reserveren.jsp" standby="loading"></object>
+
+<script type="text/javascript">
+    function changePage(string) {
+        var element = document.getElementById("htmlFrame");
+        element.setAttribute("data", string);
+    }
+
+</script>
 <div class="footer"> end</div>
+
 </body>
 </html>

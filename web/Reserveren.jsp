@@ -1,22 +1,9 @@
 <html>
 <head>
     <title>website</title>
-    <link rel="stylesheet" href="StyleSheets/Layout.css" type="text/css">
     <link rel="stylesheet" href="StyleSheets/Reserveren.css" type="text/css">
 </head>
 <body>
-<div class="header">hello</div>
-<div class="photo"></div>
-<div class="menu">
-    <a href="index.html">
-        <div>Home</div>
-    </a>
-    <a href="Reserveren.jsp">
-        <div>Reserveren</div>
-    </a>
-    <div>Info</div>
-</div>
-<div class="content">
     <form class="form" action="${pageContext.request.contextPath}/reservering.jsp" method="post">
             <div style="display: block">Reservering</div>
             <div style="display: inline-block;">
@@ -33,7 +20,7 @@
                 <textarea name="email" placeholder="email"></textarea>
                 <select name="personen">
                     <script>
-                        for(var i = 0; i < 21; i++){
+                        for(var i = 1; i < 21; i++){
                             document.write("<option value='" + i + "'>" + i + "</option>")
                         }
                     </script>
@@ -63,8 +50,6 @@
 
             <input type="submit" name="submit" value="submit" />
     </form>
-    </div>
-    <div class="footer"> end</div>
     <script type="text/javascript">
         var date = new Date();
 
