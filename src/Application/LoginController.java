@@ -23,6 +23,7 @@ import java.io.PrintWriter;
 public class LoginController extends HttpServlet {
 
     LoginDatabase database = new LoginDatabase();
+    static boolean logged = false;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,13 +31,21 @@ public class LoginController extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        if(database.checkLogin(username, password)){
+            PrintWriter out = response.getWriter();
+            out.print("<script language='JavaScript'>parent.window.location = \"werknemer.html\";;</script>");
+        }else{
+            request.getRequestDispatcher("/login.jsp").include(request, response);
+        }
 
-        database.checkLogin(username, password);
 
-        request.getRequestDispatcher("/login.jsp").include(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    }
+
+    public static boolean logged(){
+        return logged;
     }
 
 }

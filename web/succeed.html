@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function clicky() {
+            console.log('clicked');
+            window.parent.location = "index.html";
+        }
+    </script>
+</head>
+<body>
+<div>
+    uw reservering is geplaats maar nog niet bevestigd
+</div>
+<div>
+    <input type="button" value="terug" onclick="clicky()">
+</div>
+</body>
+</html>

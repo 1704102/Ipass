@@ -30,15 +30,17 @@ public class Controller extends HttpServlet {
         String personen = request.getParameter("personen");
         String date = request.getParameter("date");
         String time = request.getParameter("time");
-        request.getRequestDispatcher("/Reserveren.jsp").include(request, response);
         if(name.equals("") || surname.equals("") || email.equals("")){
+            request.getRequestDispatcher("/Reserveren.jsp").include(request, response);
             System.out.println("incorrect information dial");PrintWriter out = response.getWriter();
             out.println("<div style=\"margin: auto; width: 200px; color: red;\">incorrect summary</div>");
-        }else{
+        }else if(!name.equals("") || !surname.equals("") || !email.equals("")){
             ReserveringDatabase database = new ReserveringDatabase();
             database.connect();
             database.inserReservering(name, surname, email, personen, date, time);
             database.disconnect();
+            request.getRequestDispatcher("/succeed.html").include(request, response);
+
 
         }
 

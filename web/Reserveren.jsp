@@ -16,7 +16,7 @@
     </div>
     <div style="display: inline-block;">
         <textarea name="voornaam" placeholder="voornaam"></textarea>
-        <textarea name="acternaam" placeholder="achternaam"></textarea>
+        <textarea name="achternaam" placeholder="achternaam"></textarea>
         <textarea name="email" placeholder="email"></textarea>
         <select name="personen">
             <script>
