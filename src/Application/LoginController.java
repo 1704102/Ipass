@@ -33,6 +33,7 @@ public class LoginController extends HttpServlet {
         String password = request.getParameter("password");
         if(database.checkLogin(username, password)){
             PrintWriter out = response.getWriter();
+            WorkerController.createWorker(username);
             out.print("<script language='JavaScript'>parent.window.location = \"werknemer.html\";;</script>");
         }else{
             request.getRequestDispatcher("/login.jsp").include(request, response);
