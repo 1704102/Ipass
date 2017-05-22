@@ -7,6 +7,8 @@ package Application;
 
 import Application.Database.LoginDatabase;
 import Application.Database.ReserveringDatabase;
+import Application.Database.UserDatabase;
+import Application.Model.Worker;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +25,9 @@ import java.io.PrintWriter;
 public class LoginController extends HttpServlet {
 
     LoginDatabase database = new LoginDatabase();
+    UserDatabase database2 = new UserDatabase();
     static boolean logged = false;
+    static Worker worker;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +37,8 @@ public class LoginController extends HttpServlet {
         String password = request.getParameter("password");
         if(database.checkLogin(username, password)){
             PrintWriter out = response.getWriter();
-            WorkerController.createWorker(username);
+            worker = new Worker();
+            database2.setUser(username);
             out.print("<script language='JavaScript'>parent.window.location = \"werknemer.html\";;</script>");
         }else{
             request.getRequestDispatcher("/login.jsp").include(request, response);

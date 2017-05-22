@@ -19,7 +19,11 @@ public class LoginDatabase extends DatabaseHelper{
 
             try {
                 while (s.next()){
-                    if (username.equals(s.getString("email"))){
+                    System.out.println(s.getString("username"));
+                    System.out.println(username);
+                    if (username.equals(s.getString("username"))){
+                        System.out.println(s.getString("wachtwoord"));
+                        System.out.println(password);
                         if (password.equals(s.getString("wachtwoord"))){
                             System.out.println("true");
                             return true;

@@ -1,0 +1,17 @@
+.home{
+    background-color: #74716f;
+    margin: auto;
+    width: 420px;
+    display: block;
+    border: 1px solid black;
+}
+
+.home div{
+    display: inline-block;
+}
+
+.home div div{
+    width: 200px;
+    display: block;
+    height: 30px;
+}
